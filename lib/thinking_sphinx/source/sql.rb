@@ -43,7 +43,7 @@ module ThinkingSphinx
           )
 
           sql = "SELECT #{min_statement}, #{max_statement} " +
-            "FROM #{@model.quoted_table_name} WHERE #{@model.primary_key_for_sphinx} <= (SELECT last_id FROM sph_counter WHERE table_name = '#{@model}')"
+            "FROM #{@model.quoted_table_name} WHERE #{@model.primary_key_for_sphinx} <= (SELECT last_id FROM sph_counter WHERE table_name = '#{@model.table_name}')"
         else
 
 
