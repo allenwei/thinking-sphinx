@@ -127,6 +127,15 @@ module ThinkingSphinx
     Thread.current[:thinking_sphinx_deltas_enabled] = value
   end
 
+
+  def self.delta_by_thinking_sphinx? 
+    Thread.current[:delta_by_thinking_sphinx].nil? ? true : Thread.current[:delta_by_thinking_sphinx]
+  end
+
+  # index delta by thinking_sphinx, especially active_record callbacks
+  def self.delta_by_thinking_sphinx=(value)
+    Thread.current[:delta_by_thinking_sphinx] = value
+  end
   # Check if updates are enabled. True by default, unless within the test
   # environment.
   #

@@ -301,6 +301,7 @@ module ThinkingSphinx
       end
       
       def add_sphinx_callbacks_and_extend(delta = false)
+        return unless ThinkingSphinx.delta_by_thinking_sphinx?
         unless indexed_by_sphinx?
           after_destroy :toggle_deleted
           

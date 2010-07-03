@@ -46,6 +46,20 @@ describe ThinkingSphinx do
       ThinkingSphinx.define_indexes?.should be_true
     end
   end
+
+  describe '.delta_by_thinking_sphinx' do 
+    it "should delta by thinking_sphinx by default" do 
+      ThinkingSphinx.delta_by_thinking_sphinx = nil
+      ThinkingSphinx.delta_by_thinking_sphinx?.should be_true
+    end
+  end
+
+  describe '.delta_by_thinking_sphinx=' do 
+    it "should disable delta_by_thinking_sphinx" do 
+      ThinkingSphinx.delta_by_thinking_sphinx = false
+      ThinkingSphinx.delta_by_thinking_sphinx?.should be_false
+    end
+  end
   
   describe '.deltas_enabled?' do
     it "should index deltas by default" do
