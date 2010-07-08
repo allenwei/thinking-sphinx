@@ -129,7 +129,7 @@ module ThinkingSphinx
 
 
   def self.delta_by_thinking_sphinx? 
-    Thread.current[:delta_by_thinking_sphinx].nil? ? true : Thread.current[:delta_by_thinking_sphinx]
+    Thread.current[:delta_by_thinking_sphinx].nil? ? false : Thread.current[:delta_by_thinking_sphinx]
   end
 
   # index delta by thinking_sphinx, especially active_record callbacks
