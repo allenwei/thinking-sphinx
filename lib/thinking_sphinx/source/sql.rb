@@ -23,7 +23,7 @@ module ThinkingSphinx
         GROUP BY #{ sql_group_clause }
         SQL
 
-        sql += " ORDER BY NULL" if adapter.sphinx_identifier == "mysql"
+        sql += " ORDER BY id desc" if adapter.sphinx_identifier == "mysql"
         sql
       end
 
